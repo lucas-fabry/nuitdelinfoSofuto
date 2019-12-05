@@ -1,0 +1,17 @@
+#formulaire{
+    margin-left:200px;
+   }
+  .side-nav li a {
+    text-decoration:none;
+  }
+  #searchResults2{
+    background-color:#666666;
+  }
+  #searchResults{
+    background-color:#666666;
+  }
+
+  .right li a{
+    padding-right:2em;
+    text-decoration:none
+  }
