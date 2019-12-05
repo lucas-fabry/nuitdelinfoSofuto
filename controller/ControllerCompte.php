@@ -87,6 +87,7 @@ class ControllerCompte {
     public static function create() {
         $c = new ModelCompte(array ("login" => null, "mail" => null, "mdp" => null));
         $create = 'Créer un compte';
+        $creer = 'Inscription';
         $actionModif = "create";
         $view = 'update';
         $pagetitle = 'Creation de Compte';
@@ -133,6 +134,7 @@ class ControllerCompte {
                 }
                 else {
                     $mail = Mail::getMail($data['login'], $data['nonce']);
+                    ini_set();
                     mail($data['mail'], "Validation du compte", $mail);
                     $tab_c = ModelCompte::selectAll();
                     $view = 'created';

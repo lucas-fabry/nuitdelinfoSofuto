@@ -25,13 +25,13 @@ if(isset($mail1)){
     <legend> <?php echo $creer ?> </legend>
     <?php
     echo '<input type="hidden" value="';
-    if ($actionModif == "modifier") {
-        echo 'modifie';
+    if ($actionModif == "update") {
+        echo 'updated';
         $login = htmlspecialchars($c->get("login"));
         $mail = htmlspecialchars($c->get("mail"));
     }
-    if ($actionModif == "creer") {
-        echo 'cree';
+    if ($actionModif == "create") {
+        echo 'created';
     }
     echo '" name="action"/>';
     ?>
@@ -58,13 +58,13 @@ if(isset($mail1)){
       ?>
     </p>
     <p>
-      <label for="mdp2_id">Confirmez le mot de passe</label> :
+      <label for="mdp2_id">Confirmez Mot de passe</label> :
       <?php
-      echo '<input type="password" placeholder="Ex : copiez le truc du dessu" name="mdp2" id="mdp2_id" required/>';
+      echo '<input type="password" placeholder="Ex : copiez le truc au dessu" name="mdp2" id="mdp2_id" required/>';
       ?>
     </p>
     <p>
-
+      <button class="btn waves-effect waves-light" type="submit" value="envoyer">Envoyer</button>
     </p>
   </fieldset> 
 </form>
