@@ -1,13 +1,15 @@
-#formulaire{
-    margin-left:200px;
-   }
-  .side-nav li a {
+.hide-on-med-and-down{
+    margin-left:200px !important;
+}
+
+
+.side-nav li a {
     text-decoration:none;
   }
-  #searchResults2{
+#searchResults2{
     background-color:#666666;
   }
-  #searchResults{
+#searchResults{
     background-color:#666666;
   }
 
