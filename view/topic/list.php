@@ -8,7 +8,7 @@ foreach ($tab_t as $t) {
 	echo '<div>'.htmlspecialchars($t->get("loginCompte")).'</div>';
 	echo '<div class="card-title">'.htmlspecialchars($t->get("nomTopic")).'</div>';
 	echo '<p>'.htmlspecialchars($t->get('texteTopic')).'</p>';
-	echo '<button class="expandButton"><i class="material-icons">expand_more</i></button>';
+	echo '<button class="expandButton btn waves-effect waves-light"><i class="material-icons">expand_more</i></button>';
     
     echo '</div></div>';
 }
