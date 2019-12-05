@@ -1,3 +1,5 @@
+
 <?php
-include 'view/menu.php';
+require_once 'view/menu.php';
 ?>
+
