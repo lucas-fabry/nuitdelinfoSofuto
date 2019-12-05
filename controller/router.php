@@ -1,5 +1,6 @@
 <?php
 require_once File::build_path(array('controller','ControllerCompte.php'));
+require_once File::build_path(array('controller','ControllerTopic.php'));
 
 
 function myGet($nomVar) {

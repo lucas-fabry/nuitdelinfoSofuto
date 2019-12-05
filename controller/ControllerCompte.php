@@ -33,7 +33,7 @@ class ControllerCompte {
         $login = myGet("login");
         if (Session::is_user($login)) {
             $c = ModelCompte::select($login);
-            $create = "Modification";
+            $creer = "Modification";
             $actionModif = "update";
             $view = 'update';
             $pagetitle = 'Mise a jour du compte';
@@ -85,8 +85,7 @@ class ControllerCompte {
     
     public static function create() {
         $c = new ModelCompte(array ("login" => null, "mail" => null, "mdp" => null));
-        $create = 'Créer un compte';
-        $creer = 'Inscription';
+        $creer = 'Créer un compte';
         $actionModif = "create";
         $view = 'update';
         $pagetitle = 'Creation de Compte';
@@ -164,7 +163,7 @@ class ControllerCompte {
             }
             else {
                 $tab_c = ModelCompte::selectAll();
-                $view = 'supprimme';
+                $view = 'delete';
                 $pagetitle = 'Compte supprime';
                 require File::build_path(array('view', 'view.php'));
             }
@@ -186,30 +185,21 @@ class ControllerCompte {
     public static function connected() {
         $login = myGet('login');
         $mdp = Securite::hash(myGet('mdp'));
-        $nonceEmpty = ModelCompte::nonceEmpty($login);
-        if ($nonceEmpty) {
-            $estValide = ModelCompte::evaluateMDP($login, $mdp);
-            if ($estValide) {
-                $_SESSION['login'] = $login;
-                $_SESSION['admin'] = ModelCompte::isAdmin($login);
-                $erreur = false;
-                $c = ModelCompte::select($login);
-                $estadmin = ModelCompte::isAdmin($login);
-                $view = 'detail';
-                $pagetitle = 'Connexion reussie';
-                require File::build_path(array('view', 'view.php'));
-            }
-            else {
-                $erreur = true;
-                $view = 'connection';
-                $pagetitle = 'Erreur lors de la connection';
-                require File::build_path(array('view', 'view.php'));
-            }
+        $estValide = ModelCompte::evaluateMDP($login, $mdp);
+        if ($estValide) {
+            $_SESSION['login'] = $login;
+            $_SESSION['admin'] = ModelCompte::isAdmin($login);
+            $erreur = false;
+            $c = ModelCompte::select($login);
+            $estadmin = ModelCompte::isAdmin($login);
+            $view = 'detail';
+            $pagetitle = 'Connexion reussie';
+            require File::build_path(array('view', 'view.php'));
         }
         else {
             $erreur = true;
             $view = 'connection';
-            $pagetitle = "Veuillez confirmer l'email";
+            $pagetitle = 'Erreur lors de la connection';
             require File::build_path(array('view', 'view.php'));
         }
     }

@@ -23,7 +23,7 @@ class ModelCompte extends Model {
         }
     }
     
-    public static function validateMDP($login,$mot_de_passe_chiffre) {
+    public static function evaluateMDP($login,$mot_de_passe_chiffre) {
         try {
             $sql = "SELECT * from Compte WHERE login = :login AND mdp = :mdp";
             $req_prep = Model::$pdo->prepare($sql);

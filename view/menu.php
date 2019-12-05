@@ -16,12 +16,18 @@
       <a href="index.php?action=readAll" class="brand-logo" style="text-decoration:none; margin-left: 1vw;">Aide O'etudiant</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-
-      <li><a href="index.php?action=create&controller=compte" class="btn waves-effect waves-light deep-orange lighten-2">S'inscrire</a></li>
-      <li><a href="#?" class="btn waves-effect waves-light deep-orange lighten-2">Se connecter</a></li>
-      <li><a href="#?" class="btn waves-effect waves-light deep-orange lighten-2" >Forum</a></li>
-
-          </ul>
+        <li><a href="index.php?action=readAll&controller=topic" class="btn waves-effect waves-light deep-orange lighten-2" >Forum</a></li>
+        <?php
+          if (isset($_SESSION['login'])) {
+            echo '<li><a href="index.php?action=read&controller=compte&login='.rawurlencode($_SESSION['login']).'" class="btn waves-effect waves-light deep-orange lighten-2">Bienvenue, '.htmlspecialchars($_SESSION['login']).'</a></li>';
+            echo '<li><a href="index.php?action=deconnection&controller=compte&login='.rawurlencode($_SESSION['login']).'" class="btn waves-effect waves-light deep-orange lighten-2">Deconnection</a></li>';
+          }
+          else {
+            echo '<li><a href="index.php?action=create&controller=compte" class="btn waves-effect waves-light deep-orange lighten-2">S\'inscrire</a></li>
+          <li><a href="index.php?action=connection&controller=compte" class="btn waves-effect waves-light deep-orange lighten-2">Se connecter</a></li>';
+        }
+        ?>
+      </ul>
 
 
        <form class="hide-on-med-and-down"  id="formulaire" style="margin-left: 20vw">
