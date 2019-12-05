@@ -6,10 +6,9 @@
     </head>
 
     <body>
-        <p>Inspectez les élements pour trouver les sources cachées</p>
+        
     
-        <!--Rappel pour le mot de passe: célèbre code de jeu vidéo.-->
-
+        <p>Rappel à moi-même: Célèbre code de jeu vidéo</p>
 
 
 
