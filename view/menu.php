@@ -30,14 +30,6 @@
       </ul>
 
 
-       <form class="hide-on-med-and-down"  id="formulaire" style="margin-left: 20vw">
-        <div class="input-field" style="max-width: 400pt;">
-          <input id="search" type="search" required >
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-          <div id="searchResults" ></div>
-        </div>
-      </form>
 
 
        <ul class="side-nav" id="mobile-demo">
