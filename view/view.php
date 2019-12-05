@@ -14,7 +14,11 @@
         </header>
 
     </head>    
-        
+    <?php
+    if (isset($pagetitle)) {
+        echo $pagetitle;
+    }
+    ?>
     
       
     </body>

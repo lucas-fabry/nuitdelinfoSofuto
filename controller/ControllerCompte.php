@@ -9,7 +9,7 @@ class ControllerCompte {
     
     public static function readAll() {
         $tab_c = ModelCompte::selectAll();     //appel au modèle pour gerer la BD
-        $view = 'liste';
+        $view = 'list';
         $pagetitle = 'Liste des comptes';
         require File::build_path(array('view', 'view.php'));  //"redirige" vers la view
     }

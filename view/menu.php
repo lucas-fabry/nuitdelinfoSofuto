@@ -13,11 +13,11 @@
     <div class="nav-wrapper purple darken-2">
 
 
-      <a href="vue.php" class="brand-logo" style="text-decoration:none; margin-left: 1vw;">Aide O'etudiant</a>
+      <a href="index.php?action=readAll" class="brand-logo" style="text-decoration:none; margin-left: 1vw;">Aide O'etudiant</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
 
-      <li><a href="#?" class="btn waves-effect waves-light deep-orange lighten-2">S'inscrire</a></li>
+      <li><a href="index.php?action=create&controller=compte" class="btn waves-effect waves-light deep-orange lighten-2">S'inscrire</a></li>
       <li><a href="#?" class="btn waves-effect waves-light deep-orange lighten-2">Se connecter</a></li>
       <li><a href="#?" class="btn waves-effect waves-light deep-orange lighten-2" >Forum</a></li>
 

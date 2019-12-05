@@ -1,7 +1,7 @@
 <?php
 require_once File::build_path(array('model', 'Model.php'));
 
-class ModelClient extends Model {
+class ModelCompte extends Model {
     
     protected static $object = "compte";
     protected static $primary = 'login';
