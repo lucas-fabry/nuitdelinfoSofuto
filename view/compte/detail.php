@@ -18,7 +18,7 @@ if (Session::is_user($c->get('login'))) {
             . '</a>'
         . '</p>'."\n";
 }
-if (Session::est_admin()&&$_SESSION['login']!=$c->get('login')) {
+if (Session::is_admin()&&$_SESSION['login']!=$c->get('login')) {
     if($estadmin){
         echo '<p>'
             . '<a href="index.php?action=changeAdmin&controller=compte&'

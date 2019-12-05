@@ -1,7 +1,6 @@
 <?php
 require_once File::build_path(array('model', 'ModelCompte.php'));
 require_once File::build_path(array('lib', 'Securite.php'));
-require_once File::build_path(array('lib', 'Mail.php'));
 
 class ControllerCompte {
     
@@ -125,7 +124,6 @@ class ControllerCompte {
         if (strcmp(myGet('mdp'), myGet('mdp2')) == 0) {
             if (filter_var($data["mail"], FILTER_VALIDATE_EMAIL)!=false) {
                 $data['mdp'] = Securite::hash(myGet('mdp'));
-                $data['nonce'] = Securite::generateRandomHex();
                 $isGood = ModelCompte::create($data);
                 if ($isGood == false) {
                     $view = 'error';
@@ -133,9 +131,6 @@ class ControllerCompte {
                     require File::build_path(array('view', 'view.php'));
                 }
                 else {
-                    $mail = Mail::getMail($data['login'], $data['nonce']);
-                    ini_set();
-                    mail($data['mail'], "Validation du compte", $mail);
                     $tab_c = ModelCompte::selectAll();
                     $view = 'created';
                     $pagetitle = 'Utilisateur created';
