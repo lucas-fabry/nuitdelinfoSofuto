@@ -46,14 +46,14 @@ if (class_exists($controller_class)) {
         $controller_class::$action();
     }
     else {
-        $vue = 'error';
+        $view = 'error';
         $pagetitle = 'Erreur de methode';
-        require File::build_path(array('vue', 'vue.php'));
+        require File::build_path(array('view', 'view.php'));
     }
 }
 else {
-    $vue = 'error';
+    $view = 'error';
     $pagetitle = 'Erreur, controleur non valide';
-    require File::build_path(array('vue', 'vue.php'));
+    require File::build_path(array('view', 'view.php'));
 }
 ?>
