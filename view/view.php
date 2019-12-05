@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <title><?php echo $pagetitle; ?></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-        <link rel="stylesheet" href="css/styles.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
         
         <link rel="icon" href="images/index.ico" />
     </head>    
@@ -19,6 +19,6 @@
         $filepath = File::build_path(array("view", static::$object, "$view.php"));
         require $filepath;
     ?>
-          
+    <script src="view/scripts.js"></script>
     </body>
 </html>

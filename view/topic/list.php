@@ -3,9 +3,12 @@
 </div>
 <?php
 foreach ($tab_t as $t) {
-    echo '<p> Topic d\'idTopic'
-    . ' <a href="index.php?controller=topic&action=read&'
-        . 'idTopic='.rawurlencode($t->get('idTopic')).'">'
-        . ' ' . htmlspecialchars($t->get('idTopic')) . '</a>.'
-        . '</p>'."\n";
+	echo '<div class="card"><div class="card-content">';
+	echo '<div>'.htmlspecialchars($t->get("dateTopic")).'</div>';
+	echo '<div>'.htmlspecialchars($t->get("loginCompte")).'</div>';
+	echo '<div class="card-title">'.htmlspecialchars($t->get("nomTopic")).'</div>';
+	echo '<p>'.htmlspecialchars($t->get('texteTopic')).'</p>';
+	echo '<button class="expandButton"><i class="material-icons">expand_more</i></button>';
+    
+    echo '</div></div>';
 }
