@@ -194,4 +194,11 @@ class ControllerTopic {
             require File::build_path(array('view', 'view.php'));
         }
     }
+
+    public static function verifReponse(){
+        $view = "cassetete";
+        $pagetitle = "Clé";
+        $erreurs = array("Ce n'est pas le bon chiffre" );
+        require File::build_path(array('view', 'view.php'));
+    }
 }
