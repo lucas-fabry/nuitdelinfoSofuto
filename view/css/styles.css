@@ -1,5 +1,12 @@
-p{
-    font-size: 4vw;
-    text-align: center;
-    margin-top: 45vh;
+.toExpand {
+	height: 200px;
+	overflow: hidden;
+  	text-overflow: ellipsis; 
+	-webkit-transition: 2s; /* For Safari 3.1 to 6.0 */
+  	transition: .2s;
+}
+
+.expandButton {
+	position: absolute;
+	bottom: 20px;
 }
