@@ -8,7 +8,7 @@
 
 
 <form method="post" action="index.php?action=gagner&controller=secret">
-<input type="text" placeholder="Rentrez-ici le code pour débloquer les armes">
+<input name="code" type="text" placeholder="Rentrez-ici le code pour débloquer les armes">
 <input type="submit" value="J'ai le code !">
 
 </form>
@@ -23,7 +23,7 @@ $mois  = date("m");
 $jour  = date("d");  
 
 
-$redirection = 'index.php?action=perdu&controller=secret';
+$redirection = 'index.php?action=defaite&controller=secret';
 
 $secondes = mktime(date("H") + $heures, date("i") + $minutes, date("s") + $secondes, $mois, $jour, $annee) - time();
 ?>

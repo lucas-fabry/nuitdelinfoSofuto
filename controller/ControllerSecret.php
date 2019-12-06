@@ -24,6 +24,35 @@ class ControllerSecret {
             ControllerTopic::verifReponse();
         }
     }
+
+    public static function gagner(){
+        if(isset($_POST["code"])){
+            if(strtoupper($_POST["code"]) == "CS GROUP"){
+                $view = "victoire";
+                $pagetitle = "Félicitations !";
+                require File::build_path(array('view', 'view.php'));
+            }
+
+            else {
+                $view = "defaite";
+                $pagetitle = "Vous avez échoué...";
+                require File::build_path(array('view', 'view.php'));
+            }
+        }
+
+        else {
+            $view = "defaite";
+            $pagetitle = "Vous avez échoué...";
+            require File::build_path(array('view', 'view.php'));
+        }
+
+    }
+
+    public static function defaite(){
+        $view = "defaite";
+        $pagetitle = "Vous avez échoué...";
+        require File::build_path(array('view', 'view.php'));
+    }
     
 }
 
