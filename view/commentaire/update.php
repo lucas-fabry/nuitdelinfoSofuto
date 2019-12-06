@@ -1,3 +1,11 @@
+<?php
+echo '<div class="card"><div class="card-content">'."\n";
+  echo '<div>'.htmlspecialchars($t->get("dateTopic")).'</div>'."\n";
+  echo '<div><a href="index.php?action=read&controller=compte&login='.rawurldecode($t->get("loginCompte")).'">'.htmlspecialchars($t->get("loginCompte")).'</a></div>'."\n";
+  echo '<div class="card-title">'.htmlspecialchars($t->get("nomTopic")).'</div>'."\n";
+  echo '<p>'.htmlspecialchars($t->get('texteTopic')).'</p>'."\n";
+echo '</div></div>'."\n"."\n";
+?>
 <div class="card-panel">
 <?php
 echo "<form method=\"";

@@ -25,4 +25,31 @@ class ModelTopic extends Model {
             $this->set($cle, $value);
         }
     }
+
+    public static function selectAllByLogin($login) {
+        try {
+            $sql = "SELECT * from Topic WHERE loginCompte=:l";
+            // Préparation de la requête
+            $req_prep = Model::$pdo->prepare($sql);
+
+            $values = array(
+                "l" => $login,
+                //nomdutag => valeur, ...
+            );
+            // On donne les valeurs et on exécute la requête     
+            $req_prep->execute($values);
+
+            // On récupère les résultats comme précédemment
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, "ModelTopic");
+            return $req_prep->fetchAll();
+        }
+        catch(PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href="index.php?action=lireTout"> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+    }
 }

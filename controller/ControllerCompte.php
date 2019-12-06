@@ -22,6 +22,8 @@ class ControllerCompte {
             require File::build_path(array('view', 'view.php'));
         }
         else {
+            $tab_t = ModelTopic::selectAllByLogin($login);
+            $tab_com = ModelCommentaire::selectAllByLogin($login);
             $view = 'detail';
             $pagetitle = 'Detail de Compte';
             $estadmin = ModelCompte::isAdmin($login);

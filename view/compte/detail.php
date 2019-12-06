@@ -40,3 +40,40 @@ if (Session::is_admin()&&$_SESSION['login']!=$c->get('login')) {
             . '</p>';
     }
 }
+echo '<div class="row">';
+echo '<div class="col s6">';
+foreach ($tab_t as $t) {
+    echo '<div class="card"><div class="card-content">'."\n";
+        echo '<div>'.htmlspecialchars($t->get("dateTopic")).'</div>'."\n";
+        echo '<div><a href="index.php?action=read&controller=compte&login='.rawurldecode($t->get("loginCompte")).'">'.htmlspecialchars($t->get("loginCompte")).'</a></div>'."\n";
+        echo '<div class="card-title">'.htmlspecialchars($t->get("nomTopic")).'</div>'."\n";
+        echo '<p>'.htmlspecialchars($t->get('texteTopic')).'</p>'."\n";
+
+        if (Session::is_user($t->get('loginCompte'))) {
+            echo '<div class="card-action">';
+            echo '<a href="index.php?action=update&controller=topic&'
+                    . 'idTopic='.rawurlencode($t->get("idTopic")).'">'
+                    . 'Modifier le topic'
+                . '</a>';
+            echo '<a href="index.php?action=delete&controller=topic&'
+                    . 'idTopic='.rawurlencode($t->get("idTopic")).'">'
+                    . 'Supprimer le topic'
+                . '</a>'."\n";
+            echo '</div>';
+        }   
+    
+    echo '</div></div>'."\n"."\n";
+}
+echo '</div>';
+echo '<div class="col s6">';
+foreach ($tab_com as $com) {
+    echo '<div class="card purple darken-2">'."\n";
+        echo '<div class="card-content white-text">'."\n";
+            echo '<div>'.htmlspecialchars($com->get('dateCommentaire')).'</div>'."\n";
+            echo '<div>'.htmlspecialchars($com->get('loginCompte')).'</div>'."\n";
+            echo '<p>'.htmlspecialchars($com->get('texteCommentaire')).'</p>'."\n";
+        echo '</div>'."\n";
+    echo '</div>'."\n";
+}
+echo '</div>';
+echo '</div>';

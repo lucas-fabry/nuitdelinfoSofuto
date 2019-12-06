@@ -6,7 +6,7 @@
 foreach ($tab_t as $t) {
 	echo '<div class="card"><div class="card-content toExpand">'."\n";
 		echo '<div>'.htmlspecialchars($t->get("dateTopic")).'</div>'."\n";
-		echo '<div>'.htmlspecialchars($t->get("loginCompte")).'</div>'."\n";
+		echo '<div><a href="index.php?action=read&controller=compte&login='.rawurldecode($t->get("loginCompte")).'">'.htmlspecialchars($t->get("loginCompte")).'</a></div>'."\n";
 		echo '<div class="card-title">'.htmlspecialchars($t->get("nomTopic")).'</div>'."\n";
 		echo '<p>'.htmlspecialchars($t->get('texteTopic')).'</p>'."\n";
 

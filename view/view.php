@@ -11,7 +11,11 @@
         <link rel="stylesheet" href="view/css/styles.css">
         
         <link rel="icon" href="images/index.ico" />
-        <link rel="stylesheet" type="text/css" href="view/css/rendu3D.css" />
+        <?php
+        if (myGet('action')=='afficher') {
+            echo '<link rel="stylesheet" type="text/css" href="view/css/rendu3D.css" />';
+        }
+        ?>
         <!-- SCRIPTS DE BASE -->
         <script src="https://cdn.babylonjs.com/babylon.js"></script>
         <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>

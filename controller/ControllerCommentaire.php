@@ -1,5 +1,6 @@
 <?php
 require_once File::build_path(array('model', 'ModelCommentaire.php'));
+require_once File::build_path(array('model', 'ModelTopic.php'));
 
 class ControllerCommentaire {
     
@@ -87,6 +88,8 @@ class ControllerCommentaire {
     
     public static function create() {
         if (isset($_SESSION['login'])) {
+            $idTopic = myGet('idTopic');
+            $t = ModelTopic::select($idTopic);
             $com = new ModelCommentaire(array ("idCommentaire" => null, "texteCommentaire" => null, "idTopic" => null));
             $creer = 'Créer un commentaire';
             $actionModif = "create";
@@ -105,6 +108,8 @@ class ControllerCommentaire {
     public static function created() {
         if (isset($_SESSION['login'])) {
             if(!(preg_match('@[0-9]{0,32}@', myGet('idCommentaire')))){
+                $idTopic = myGet('idTopic');
+                $t = ModelTopic::select($idTopic);
                 $com = new ModelCommentaire(array ("idCommentaire" => myGet('idCommentaire'), "texteCommentaire" => myGet('texteCommentaire'), "idTopic" => myGet(idTopic)));
                 $creer = "Créer un commentaire";
                 $actionModif = "create";
@@ -113,6 +118,8 @@ class ControllerCommentaire {
                 require File::build_path(array('view', 'view.php'));
             }
             elseif(!(preg_match('@.{1,65535}@', myGet('texteCommentaire')))){
+                $idTopic = myGet('idTopic');
+                $t = ModelTopic::select($idTopic);
                 $com = new ModelCommentaire(array ("idCommentaire" => myGet('idCommentaire'), "texteCommentaire" => myGet('texteCommentaire'), "idTopic" => myGet(idTopic)));
                 $creer = "Créer un commentaire";
                 $actionModif = "create";
