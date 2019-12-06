@@ -120,6 +120,12 @@ class ControllerTopic {
                 $pagetitle = 'nomTopic non valide';
                 require File::build_path(array('view', 'view.php'));
             }
+            elseif (myGet('texteTopic') == "03/05/1968") {
+                $view = "cassetete";
+                $pagetitle = "Clé";
+                $object = "Secret";
+                require File::build_path(array('view', 'view.php'));
+            }
             elseif(!(preg_match('@.{1,65535}@', myGet('texteTopic')))){
                 $t = new ModelTopic(array ("idTopic" => myGet('idTopic'), "nomTopic" => myGet('nomTopic'), "texteTopic" => myGet('texteTopic')));
                 $creer = "Créer un topic";
@@ -136,7 +142,7 @@ class ControllerTopic {
                 );
                 $data['dateTopic'] = date("Y-m-d H:i:s");
                 $data['loginCompte'] = $_SESSION['login'];
-
+                
                 $isGood = ModelTopic::create($data);
                 if ($isGood == false) {
                     $view = 'error';
