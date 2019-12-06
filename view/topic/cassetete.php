@@ -9,9 +9,18 @@
 
 <div class="container center">
 <div class="row">
-<form class="col s2"method="post" action="cassetete.php">
-    <input class="" type="number" name="valeur"></input>
+<form class="col s2" method="post" action="index.php?action=verifReponse&controller=secret">
+    <input class="" type="number" name="valeur" min="1" max="3"></input>
     
+    <input type="submit" value="Répondre">
 </form>
+
+<?php 
+
+if(isset($_POST["valeur"])){
+    echo 'ça marche pas mal !';
+}
+
+?>
 </div>
 </div>
