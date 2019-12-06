@@ -2,6 +2,7 @@
 require_once File::build_path(array('controller','ControllerCompte.php'));
 require_once File::build_path(array('controller','ControllerTopic.php'));
 require_once File::build_path(array('controller','ControllerSecret.php'));
+require_once File::build_path(array('controller','ControllerVille.php'));
 
 
 function myGet($nomVar) {
