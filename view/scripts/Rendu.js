@@ -45,23 +45,54 @@ Rendu = function(game) {
       //Add text to dynamic texture
       var font = "bold 44px monospace";
       textureStade.drawText("Ǝᗡ∀⊥S", 250, 350, font, "green", "white", true, true);
-
       var sphere = BABYLON.Mesh.CreateSphere("foot", 100, 100, scene);
-      sphere.position= new BABYLON.Vector3(-400, -15, 400);
+      sphere.position= new BABYLON.Vector3(-400, -15, -400);
       sphere.material = materialStade;
-      sphere.rotate.x = (90*Math.PI)/180;
+      sphere.checkCollisions = true;
+
+      var crous = BABYLON.Mesh.CreateBox("crous", 50, scene, true, 0);
+      crous.position= new BABYLON.Vector3(500, 100/2 -15, 475);
+      crous.scaling.y= 2;
+      crous.checkCollisions = true;
+
+      var textureCROUS = new BABYLON.DynamicTexture("dynamic texture", {width:500, height:500}, scene);
+      var textureContext = textureCROUS.getContext();
+
+      var materialCROUS = new BABYLON.StandardMaterial("Mat", scene);
+      materialCROUS.diffuseTexture = textureCROUS;
+      textureCROUS.drawText("CROUS", 250, 350, font, "white", "red", true, true);
+
+      crous.material = materialCROUS;
+
+
+      var codeS = BABYLON.Mesh.CreateBox("codeS", 30, scene, true, 0);
+      codeS.position= new BABYLON.Vector3(-725, 30/2 -15, 110 );
+      codeS.scaling.x = 0.01;
+      codeS.scaling.z= 0.3;
+      codeS.checkCollisions = true;
+
+      var texturecodeS = new BABYLON.DynamicTexture("dynamic texture", {width:500, height:500}, scene);
+      var textureContext = texturecodeS.getContext();
+
+      var materialcodeS = new BABYLON.StandardMaterial("Mat", scene);
+      materialcodeS.diffuseTexture = texturecodeS;
+      texturecodeS.drawText("CS Group", 250, 350, font, "black", "gold", true, true);
+
+      codeS.material = materialcodeS;
+
+
 
 
       var columns = [];
-      var numberColumn = 81;
+      var numberColumn = 60;
       var sizeArena = 1000*ground.scaling.x -500;
-      var ratio = ((115/numberColumn)/100) * sizeArena;
-      for (var i = 0; i <= 15; i++) {
+      var ratio = ((100/numberColumn)/100) * sizeArena;
+      for (var i = 0; i <= 10; i++) {
           var size = getRandomIntInclusive(40,100);
           if(numberColumn>0){
               columns[i] = [];
               let mainCylinder = BABYLON.Mesh.CreateCylinder("cyl0-"+i, size , 30, 30, 4, 4, scene);
-              mainCylinder.position = new BABYLON.Vector3(1725, size/2-15 ,-480 + (50 * i));
+              mainCylinder.position = new BABYLON.Vector3(1725, size/2-15 ,-200 + (50 * i));
               mainCylinder.rotation.y = (Math.PI*45)/180;
               mainCylinder.material = materialWall;
               mainCylinder.checkCollisions = true;
