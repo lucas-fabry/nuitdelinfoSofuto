@@ -194,6 +194,8 @@ class ControllerCompte {
             $erreur = false;
             $c = ModelCompte::select($login);
             $estadmin = ModelCompte::isAdmin($login);
+            $tab_t = ModelTopic::selectAllByLogin($login);
+            $tab_com = ModelCommentaire::selectAllByLogin($login);
             $view = 'detail';
             $pagetitle = 'Connexion reussie';
             require File::build_path(array('view', 'view.php'));
@@ -235,6 +237,8 @@ class ControllerCompte {
         $login = myGet('login');
         $c = ModelCompte::select($login);
         if (Session::is_admin()) {
+            $tab_t = ModelTopic::selectAllByLogin($login);
+            $tab_com = ModelCommentaire::selectAllByLogin($login);
             if ($_SESSION['login']!=$c->get('login')) {
                 $estadmin = ModelCompte::isAdmin($login);
 

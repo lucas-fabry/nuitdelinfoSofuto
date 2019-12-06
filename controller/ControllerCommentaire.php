@@ -32,6 +32,8 @@ class ControllerCommentaire {
         $idCommentaire = myGet("idCommentaire");
         $com = ModelCommentaire::select($idCommentaire);
         if (Session::is_user($com->get('loginCompte'))) {
+            $idTopic = myGet('idTopic');
+            $t = ModelTopic::select($idTopic);
             $creer = "Modification";
             $actionModif = "update";
             $view = 'update';

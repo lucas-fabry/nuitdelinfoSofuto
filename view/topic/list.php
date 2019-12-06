@@ -30,6 +30,12 @@ foreach ($tab_t as $t) {
 					echo '<div>'.htmlspecialchars($com->get('loginCompte')).'</div>'."\n";
 					echo '<p>'.htmlspecialchars($com->get('texteCommentaire')).'</p>'."\n";
 				echo '</div>'."\n";
+				if (Session::is_user($com->get('loginCompte'))) {
+					echo '<div class="card-action">'."\n";
+						echo '<a href="index.php?action=update&controller=commentaire&idCommentaire='.rawurldecode($com->get('idCommentaire')).'&idTopic='.rawurlencode($t->get('idTopic')).'">Modifier</a>'."\n";
+						echo '<a href="index.php?action=delete&controller=commentaire&idCommentaire='.rawurldecode($com->get('idCommentaire')).'">Supprimer</a>'."\n";
+					echo '</div>';
+				}
 			echo '</div>'."\n";
 		}
 		echo '<a href="index.php?action=create&controller=commentaire&idTopic='.rawurlencode($t->get('idTopic')).'"><button class="btn waves-effect waves-light deep-orange lighten-2"><i class="material-icons">add</i></button></a>'."\n";
