@@ -152,18 +152,15 @@ class ControllerCommentaire {
                     require File::build_path(array('view', 'view.php'));
                 }
                 else {
-                    $tab_com = ModelCommentaire::selectAll();
-                    $view = 'created';
-                    $pagetitle = 'Commentaire created';
-                    require File::build_path(array('view', 'view.php'));
+                    ControllerTopic::readAll();
                 }
             }
         }
         else {
-            $tab_com = ModelCommentaire::selectAll();
-            $view = 'list';
+            ControllerTopic::readAll();
+            /*$view = 'list';
             $pagetitle = 'Connexion requise';
-            require File::build_path(array('view', 'view.php'));
+            require File::build_path(array('view', 'view.php'));*/
         }
     }
     

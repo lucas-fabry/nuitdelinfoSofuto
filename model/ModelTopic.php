@@ -35,6 +35,8 @@ class ModelTopic extends Model {
             $rep->setFetchMode(PDO::FETCH_CLASS, $class_name);
             return $rep->fetchAll();
         }
+
+        
         catch(PDOException $e) {
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
