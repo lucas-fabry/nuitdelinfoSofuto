@@ -5,7 +5,7 @@
         kkeys.push( e.keyCode );
         if ( kkeys.toString().indexOf( konami ) >= 0 ) {
         alert('Ah ! Heureux de vous revoir !');
-        window.location = "../secret/interface";
+        window.location = "../secret/interface.php";
         }
         }, true);
         }

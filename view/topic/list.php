@@ -47,7 +47,7 @@ foreach ($tab_t as $t) {
 				}
 			echo '</div>'."\n";
 		}
-		echo '<a href="index.php?action=create&controller=commentaire&idTopic='.rawurlencode($t->get('idTopic')).'"><button class="btn waves-effect waves-light deep-orange lighten-2"><i class="material-icons">add</i></button></a>'."\n";
+		echo '<div><a href="index.php?action=create&controller=commentaire&idTopic='.rawurlencode($t->get('idTopic')).'"><expandButton class="btn waves-effect waves-light deep-orange lighten-2"><i class="material-icons">add</i></button></a></div>'."\n";
 
 		echo '<button class="expandButton btn waves-effect waves-light"><i class="material-icons">expand_more</i></button>'."\n";   
 	
