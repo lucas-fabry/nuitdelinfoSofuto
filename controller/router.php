@@ -1,9 +1,13 @@
 <?php
 require_once File::build_path(array('controller','ControllerCompte.php'));
 require_once File::build_path(array('controller','ControllerTopic.php'));
+<<<<<<< HEAD
+require_once File::build_path(array('controller','ControllerScore.php'));
+=======
 require_once File::build_path(array('controller','ControllerSecret.php'));
 require_once File::build_path(array('controller','ControllerVille.php'));
 require_once File::build_path(array('controller','ControllerCommentaire.php'));
+>>>>>>> da27f6dd7e318394bcddffa63fd8d792c5a9968d
 
 
 function myGet($nomVar) {

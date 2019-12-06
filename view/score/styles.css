@@ -1,0 +1,29 @@
+#level{
+	position:fixed;
+	left:80%;
+	top:10%;
+
+}
+
+#score{
+	position:fixed;
+	left:85%;
+	top:10%;
+
+}
+
+#canvas{
+	position:fixed;
+	left:5%;
+	bottom:0%;
+}
+
+#scoreboard{
+	position:fixed;
+	left:60%;
+	top:20%;	
+}
+
+body{
+		font-size:2em;
+}
