@@ -1,7 +1,7 @@
-<div class="card-panel">
-	<a href="index.php?action=create&controller=topic"><button class="btn waves-effect waves-light" type="button"><i class="material-icons">add</i></button></a>
-</div>
 <div class="container">
+
+<a class="ajoutTopic" href="index.php?action=create&controller=topic"><button class="btn waves-effect waves-light" type="button"><i class="material-icons">add</i></button></a>
+
 <?php
 foreach ($tab_t as $t) {
 	echo '<div class="card"><div class="card-content toExpand">'."\n";

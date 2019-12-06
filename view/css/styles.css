@@ -9,5 +9,11 @@
 .expandButton {
 	position: absolute;
 	bottom: 0px;
-	left: 0px;
+	right: 0px;
+}
+
+.ajoutTopic {
+	position: fixed;
+	left: 85vw;
+	top: 20vh;
 }

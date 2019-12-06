@@ -110,7 +110,7 @@ class ControllerCompte {
             //pseudo saisi n'est pas valide 
             $nom1 = myGet("nom");
             $mail1 = myGet("mail");
-            
+            $creer = 'Créer un compte';
             $actionModif = "create";
             $view = 'update';
             $pagetitle = 'login non valide';
@@ -119,7 +119,7 @@ class ControllerCompte {
         elseif(!(preg_match('/^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/', myGet("mail")))){
             $login1 = myGet("login");
             $mail1 = myGet("mail");
-            
+            $creer = 'Créer un compte';
             $actionModif = "create";
             $view = 'update';
             $pagetitle = 'mail non valide';
