@@ -27,7 +27,7 @@ foreach ($tab_t as $t) {
 			echo '<div class="card purple darken-2">'."\n";
 				echo '<div class="card-content white-text">'."\n";
 					echo '<div>'.htmlspecialchars($com->get('dateCommentaire')).'</div>'."\n";
-					echo '<div>'.htmlspecialchars($com->get('loginCompte')).'</div>'."\n";
+					echo '<div><a href="index.php?action=read&controller=compte&login='.rawurlencode($com->get('loginCompte')).'">'.htmlspecialchars($com->get('loginCompte')).'</a></div>'."\n";
 					echo '<p>'.htmlspecialchars($com->get('texteCommentaire')).'</p>'."\n";
 				echo '</div>'."\n";
 				if (Session::is_user($com->get('loginCompte'))) {

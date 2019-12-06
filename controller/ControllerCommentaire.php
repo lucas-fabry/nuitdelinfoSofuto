@@ -7,10 +7,17 @@ class ControllerCommentaire {
     protected static $object = "commentaire";
     
     public static function readAll() {
-        $tab_com = ModelCommentaire::selectAll();     //appel au modèle pour gerer la BD
-        $view = 'list';
-        $pagetitle = 'Liste des commentaire';
-        require File::build_path(array('view', 'view.php'));  //"redirige" vers la view
+        if (Session::is_admin()) {
+            $tab_com = ModelCommentaire::selectAll();     //appel au modèle pour gerer la BD
+            $view = 'list';
+            $pagetitle = 'Liste des commentaire';
+            require File::build_path(array('view', 'view.php'));  //"redirige" vers la view
+        }
+        else {
+            $view = 'error';
+            $pagetitle = 'Erreur';
+            require File::build_path(array('view', 'view.php'));
+        }
     }
     
     public static function read() {

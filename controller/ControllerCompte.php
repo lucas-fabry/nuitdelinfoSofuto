@@ -7,10 +7,17 @@ class ControllerCompte {
     protected static $object = "compte";
     
     public static function readAll() {
-        $tab_c = ModelCompte::selectAll();     //appel au modèle pour gerer la BD
-        $view = 'list';
-        $pagetitle = 'Liste des comptes';
-        require File::build_path(array('view', 'view.php'));  //"redirige" vers la view
+        if (Session::is_admin()) {
+            $tab_c = ModelCompte::selectAll();     //appel au modèle pour gerer la BD
+            $view = 'list';
+            $pagetitle = 'Liste des comptes';
+            require File::build_path(array('view', 'view.php'));  //"redirige" vers la view
+        }
+        else {
+            $view = 'connection';
+            $pagetitle = 'Connexion requise';
+            require File::build_path(array('view', 'view.php'));
+        }
     }
     
     public static function read() {
@@ -64,9 +71,12 @@ class ControllerCompte {
                     require File::build_path(array('view', 'view.php'));
                 }
                 else {
-                    $tab_c = ModelCompte::selectAll();
-                    $view = 'updated';
-                    $pagetitle = 'Utilisateur updatede';
+                    $c = ModelCompte::select($data['login']);
+                    $estadmin = ModelCompte::isAdmin($data['login']);
+                    $tab_t = ModelTopic::selectAllByLogin($data['login']);
+                    $tab_com = ModelCommentaire::selectAllByLogin($data['login']);
+                    $view = 'detail';
+                    $pagetitle = 'Modification reussie';
                     require File::build_path(array('view', 'view.php'));
                 }
             }
@@ -132,8 +142,9 @@ class ControllerCompte {
                     require File::build_path(array('view', 'view.php'));
                 }
                 else {
+                    $login = $data['login'];
                     $tab_c = ModelCompte::selectAll();
-                    $view = 'created';
+                    $view = 'connection';
                     $pagetitle = 'Utilisateur created';
                     require File::build_path(array('view', 'view.php'));
                 }

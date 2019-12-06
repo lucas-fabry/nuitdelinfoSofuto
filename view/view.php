@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="view/css/styles.css">
         
-        <link rel="icon" href="images/index.ico" />
+        <link rel="icon" href="view/images/index.ico" />
         <?php
         if (myGet('action')=='afficher') {
             echo '<link rel="stylesheet" type="text/css" href="view/css/rendu3D.css" />';

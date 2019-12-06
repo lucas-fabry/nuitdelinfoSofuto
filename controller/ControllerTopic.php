@@ -18,16 +18,28 @@ class ControllerTopic {
     }
     
     public static function read() {
-        $idTopic = myGet("idTopic");
-        $t = ModelTopic::select($idTopic);
-        if ($t == false) {
-            $view = 'error';
-            $pagetitle = 'Erreur de lecture';
-            require File::build_path(array('view', 'view.php'));
+        if (Session::is_admin()) {
+            $idTopic = myGet("idTopic");
+            $t = ModelTopic::select($idTopic);
+            if ($t == false) {
+                $view = 'error';
+                $pagetitle = 'Erreur de lecture';
+                require File::build_path(array('view', 'view.php'));
+            }
+            else {
+                $view = 'detail';
+                $pagetitle = 'Detail du Topic';
+                require File::build_path(array('view', 'view.php'));
+            }
         }
         else {
-            $view = 'detail';
-            $pagetitle = 'Detail du Topic';
+            $tab_t = ModelTopic::selectAll();
+            $tab_tab_com = array();
+            foreach ($tab_t as $key => $t) {
+                $tab_tab_com[$t->get('idTopic')] = ModelCommentaire::selectAllByIdTopic($t->get('idTopic'));
+            }
+            $view = 'list';
+            $pagetitle = 'Connexion requise';
             require File::build_path(array('view', 'view.php'));
         }
     }
@@ -44,7 +56,11 @@ class ControllerTopic {
         }
         else {
             $tab_t = ModelTopic::selectAll();
-            $view = 'detail';
+            $tab_tab_com = array();
+            foreach ($tab_t as $key => $t) {
+                $tab_tab_com[$t->get('idTopic')] = ModelCommentaire::selectAllByIdTopic($t->get('idTopic'));
+            }
+            $view = 'list';
             $pagetitle = 'Connexion requise';
             require File::build_path(array('view', 'view.php'));
         }
@@ -84,6 +100,10 @@ class ControllerTopic {
         else {
             $idTopic = $data['idTopic'];
             $tab_t = ModelTopic::selectAll();
+            $tab_tab_com = array();
+            foreach ($tab_t as $key => $t) {
+                $tab_tab_com[$t->get('idTopic')] = ModelCommentaire::selectAllByIdTopic($t->get('idTopic'));
+            }
             $view = 'list';
             $pagetitle = 'Connexion requise';
             require File::build_path(array('view', 'view.php'));
@@ -101,6 +121,10 @@ class ControllerTopic {
         }
         else {
             $tab_t = ModelTopic::selectAll();
+            $tab_tab_com = array();
+            foreach ($tab_t as $key => $t) {
+                $tab_tab_com[$t->get('idTopic')] = ModelCommentaire::selectAllByIdTopic($t->get('idTopic'));
+            }
             $view = 'list';
             $pagetitle = 'Connexion requise';
             require File::build_path(array('view', 'view.php'));
@@ -156,6 +180,10 @@ class ControllerTopic {
                 }
                 else {
                     $tab_t = ModelTopic::selectAll();
+                    $tab_tab_com = array();
+                    foreach ($tab_t as $key => $t) {
+                        $tab_tab_com[$t->get('idTopic')] = ModelCommentaire::selectAllByIdTopic($t->get('idTopic'));
+                    }
                     $view = 'created';
                     $pagetitle = 'Topic created';
                     require File::build_path(array('view', 'view.php'));
@@ -164,6 +192,10 @@ class ControllerTopic {
         }
         else {
             $tab_t = ModelTopic::selectAll();
+            $tab_tab_com = array();
+            foreach ($tab_t as $key => $t) {
+                $tab_tab_com[$t->get('idTopic')] = ModelCommentaire::selectAllByIdTopic($t->get('idTopic'));
+            }
             $view = 'list';
             $pagetitle = 'Connexion requise';
             require File::build_path(array('view', 'view.php'));
@@ -183,12 +215,20 @@ class ControllerTopic {
             else {
                 $tab_t = ModelTopic::selectAll();
                 $view = 'delete';
+                $tab_tab_com = array();
+                foreach ($tab_t as $key => $t) {
+                    $tab_tab_com[$t->get('idTopic')] = ModelCommentaire::selectAllByIdTopic($t->get('idTopic'));
+                }
                 $pagetitle = 'Topic supprime';
                 require File::build_path(array('view', 'view.php'));
             }
         }
         else {
             $tab_t = ModelTopic::selectAll();
+            $tab_tab_com = array();
+            foreach ($tab_t as $key => $t) {
+                $tab_tab_com[$t->get('idTopic')] = ModelCommentaire::selectAllByIdTopic($t->get('idTopic'));
+            }
             $view = 'list';
             $pagetitle = 'Connexion requise';
             require File::build_path(array('view', 'view.php'));
