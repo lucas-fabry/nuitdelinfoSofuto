@@ -28,6 +28,10 @@
             echo '<li><a href="index.php?action=create&controller=compte" class="btn waves-effect waves-light deep-orange lighten-2">S\'inscrire</a></li>
           <li><a href="index.php?action=connection&controller=compte" class="btn waves-effect waves-light deep-orange lighten-2">Se connecter</a></li>';
         }
+        if (Session::is_admin()) {
+          echo '<li><a href="index.php?action=readAll&controller=tag" class="btn waves-effect waves-light deep-orange lighten-2" >listeTag</a></li>';
+          echo '<li><a href="index.php?action=create&controller=tag" class="btn waves-effect waves-light deep-orange lighten-2" >createTag</a></li>';
+        }
         ?>
       </ul>
 

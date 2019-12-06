@@ -31,6 +31,10 @@ class ControllerCompte {
         else {
             $tab_t = ModelTopic::selectAllByLogin($login);
             $tab_com = ModelCommentaire::selectAllByLogin($login);
+            $tab_tab_tag = array();
+            foreach ($tab_t as $key => $t) {
+                $tab_tab_tag[$t->get('idTopic')] = ModelTag::selectAllByIdTopic($t->get('idTopic'));
+            }
             $view = 'detail';
             $pagetitle = 'Detail de Compte';
             $estadmin = ModelCompte::isAdmin($login);
@@ -75,6 +79,10 @@ class ControllerCompte {
                     $estadmin = ModelCompte::isAdmin($data['login']);
                     $tab_t = ModelTopic::selectAllByLogin($data['login']);
                     $tab_com = ModelCommentaire::selectAllByLogin($data['login']);
+                    $tab_tab_tag = array();
+                    foreach ($tab_t as $key => $t) {
+                        $tab_tab_tag[$t->get('idTopic')] = ModelTag::selectAllByIdTopic($t->get('idTopic'));
+                    }
                     $view = 'detail';
                     $pagetitle = 'Modification reussie';
                     require File::build_path(array('view', 'view.php'));
@@ -207,6 +215,10 @@ class ControllerCompte {
             $estadmin = ModelCompte::isAdmin($login);
             $tab_t = ModelTopic::selectAllByLogin($login);
             $tab_com = ModelCommentaire::selectAllByLogin($login);
+            $tab_tab_tag = array();
+            foreach ($tab_t as $key => $t) {
+                $tab_tab_tag[$t->get('idTopic')] = ModelTag::selectAllByIdTopic($t->get('idTopic'));
+            }
             $view = 'detail';
             $pagetitle = 'Connexion reussie';
             require File::build_path(array('view', 'view.php'));
@@ -258,6 +270,10 @@ class ControllerCompte {
                 $estadmin = ModelCompte::isAdmin($login);
 
                 $pagetitle = 'Droits modifiés';
+                $tab_tab_tag = array();
+                foreach ($tab_t as $key => $t) {
+                    $tab_tab_tag[$t->get('idTopic')] = ModelTag::selectAllByIdTopic($t->get('idTopic'));
+                }
                 $view = 'detail';
                 $c = ModelCompte::select($login);
                 require File::build_path(array('view', 'view.php'));
