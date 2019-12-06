@@ -16,6 +16,7 @@
       <a href="index.php?action=readAll" class="brand-logo" style="text-decoration:none; margin-left: 1vw;">Aide O'etudiant</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
+        <li><a href="index.php?action=afficher&controller=ville" class="btn waves-effect waves-light deep-orange lighten-2" >Carte 3D</a></li>
         <li><a href="index.php?action=readAll&controller=topic" class="btn waves-effect waves-light deep-orange lighten-2" >Forum</a></li>
         <?php
           if (isset($_SESSION['login'])) {

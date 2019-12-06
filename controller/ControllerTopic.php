@@ -1,5 +1,6 @@
 <?php
 require_once File::build_path(array('model', 'ModelTopic.php'));
+require_once File::build_path(array('model', 'ModelCommentaire.php'));
 
 class ControllerTopic {
     
@@ -7,6 +8,10 @@ class ControllerTopic {
     
     public static function readAll() {
         $tab_t = ModelTopic::selectAll();     //appel au modèle pour gerer la BD
+        $tab_tab_com = array();
+        foreach ($tab_t as $key => $t) {
+            $tab_tab_com[$t->get('idTopic')] = ModelCommentaire::selectAllByIdTopic($t->get('idTopic'));
+        }
         $view = 'list';
         $pagetitle = 'Liste des topics';
         require File::build_path(array('view', 'view.php'));  //"redirige" vers la view
