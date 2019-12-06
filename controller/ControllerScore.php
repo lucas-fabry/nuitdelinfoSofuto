@@ -3,7 +3,7 @@ require_once File::build_path(array('model', 'ModelScore.php'));
 
 class ControllerScore {
     
-    protected static $object = "Score";
+    protected static $object = "score";
     
     public static function readAll() {
         $tab_t = ModelScore::selectAll();     //appel au modèle pour gerer la BD
