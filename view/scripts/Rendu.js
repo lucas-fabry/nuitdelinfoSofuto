@@ -3,6 +3,8 @@ Rendu = function(game) {
       this.game = game;
       var scene = game.scene;
 
+      var music = new BABYLON.Sound("Music", "music/0477.wav", scene, null, { loop: true, autoplay: true });
+
       // Création de notre lumière principale
       var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
       var light2 = new BABYLON.HemisphericLight("light2", new BABYLON.Vector3(0, -1, 0), scene);
