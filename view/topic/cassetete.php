@@ -17,9 +17,7 @@
 
 <?php 
 
-if(isset($_POST["valeur"])){
-    echo 'ça marche pas mal !';
-}
+if(isset($erreurs)){echo('<p style="color: red;">' . $erreurs[0] . '</p>');}
 
 ?>
 </div>
