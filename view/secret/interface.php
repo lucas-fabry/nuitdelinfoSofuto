@@ -33,7 +33,7 @@
 
     <script>
         function afficherMessage() {
-          document.getElementById("message").innerHTML = "..-. --- .-. ..- -- /  / -.-. .- -.-. .... . --..-- /  / - .-. --- ..- ...- . --.. -....- .-.. . .-.-.- /  / -. --- ..- ... /  / .- ...- --- -. ... /  / -... . ... --- .. -. /  / -.. . /  / ...- --- ..- ... /  / -....- ... - --- .--. -....- .-.-.-";
+          document.getElementById("message").innerHTML = "..-. --- .-. ..- -- /  / -.-. .- -.-. .... . --..-- /  / - .-. --- ..- ...- . --.. -....- .-.. . .-.-.- /  / -. --- ..- ... /  / .- ...- --- -. ... /  / -... . ... --- .. -. /  / -.. . /  / ...- --- ..- ... /  / -....- ... - --- .--. -....- .-.-.-  <br> orfdolvdwhxu xqliruph gh uhvvrxufh: lqgha.sks?dfwlrq=uhdgDoo&frqwuroohu=wrslf";
         }   
     </script>
 </body>
