@@ -3,8 +3,6 @@ Rendu = function(game) {
       this.game = game;
       var scene = game.scene;
 
-      var music = new BABYLON.Sound("Music", "music/0477.wav", scene, null, { loop: true, autoplay: true });
-
       // Création de notre lumière principale
       var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
       var light2 = new BABYLON.HemisphericLight("light2", new BABYLON.Vector3(0, -1, 0), scene);
@@ -56,15 +54,23 @@ Rendu = function(game) {
       crous.position= new BABYLON.Vector3(500, 100/2 -15, 475);
       crous.scaling.y= 2;
       crous.checkCollisions = true;
-
       var textureCROUS = new BABYLON.DynamicTexture("dynamic texture", {width:500, height:500}, scene);
       var textureContext = textureCROUS.getContext();
-
       var materialCROUS = new BABYLON.StandardMaterial("Mat", scene);
       materialCROUS.diffuseTexture = textureCROUS;
       textureCROUS.drawText("CROUS", 250, 350, font, "white", "red", true, true);
-
       crous.material = materialCROUS;
+      crous.actionManager = new BABYLON.ActionManager(scene);
+
+      crous.actionManager.registerAction(
+      new BABYLON.ExecuteCodeAction(
+          {
+              trigger: BABYLON.ActionManager.OnPickTrigger
+          },
+          function () { window.open("http://www.crous-montpellier.fr/"); }
+      )
+  );
+
 
 
       var codeS = BABYLON.Mesh.CreateBox("codeS", 30, scene, true, 0);
