@@ -1,3 +1,7 @@
+<?php
+    
+?>
+
 <html>
 <head>
 <link type="text/css" href="csshake.css">
@@ -24,18 +28,26 @@
 
 <body style="background-color: black;">
     <img src="../images/logoRebel.png" style="width: 10vw; margin-left: 45vw; margin-top: -2vh;"></img>
-    <hr width="100%" color="white" size="1" style="margin-top: -3vh;">
+    <hr width="100%" color="white" size="1" style="margin-top: -3vh;"></hr>
 
-    <img src="../images/persoRebel.png" style="width: 8vw; background-color: rgb(40,40,40); margin-top: -18vh; margin-left:">
-    <img class="shake" src="../images/notification.png" style="width: 5vw; margin-top: 70vh; margin-left: 90vw;" id="notification" onclick="afficherMessage()">
+    <img src="../images/persoRebel.png" style="width: 8vw; background-color: rgb(40,40,40); margin-top: -18vh;"/>
+    <p id="message" style="color:white; position:absolute;"></p>
+    <img class="shake" src="../images/notification.png" style="width: 5vw; margin-top: 70vh; margin-left: 90vw;" id="notification" onclick="myFunction()">
     
-    <p id="message" style="color:white; margin-top: -75vh;"></p>
+    <p style="margin-left: auto; margin-right:auto; margin-top: -60vh;width: 40vw;background-color: white; border: 5px solid red;">Camarade Zeus à Camarade Posidéon. Nous vous attendons ! Comme vous le savez ça ne va pas fort pour les étudiants, nous sommes bloqués dans la précarité, certain d'entre nous, entre les cours et les jobs étudiants font jusqu'au 17h de travail par jour, combien de temps accepteront nous cela ? Il est venu le temps de la révolte, je vous ai laissé des consignes, rejoignez-moi, l'heure est proche, ne tardez pas.</p>
+                
+    
+    
+    <?php ?>
 
     <script>
-        function afficherMessage() {
-          document.getElementById("message").innerHTML = "..-. --- .-. ..- -- /  / -.-. .- -.-. .... . --..-- /  / - .-. --- ..- ...- . --.. -....- .-.. . .-.-.- /  / -. --- ..- ... /  / .- ...- --- -. ... /  / -... . ... --- .. -. /  / -.. . /  / ...- --- ..- ... /  / -....- ... - --- .--. -....- .-.-.-  <br> orfdolvdwhxu xqliruph gh uhvvrxufh: lqgha.sks?dfwlrq=uhdgDoo&frqwuroohu=wrslf";
-        }   
-    </script>
+        
+
+        function myFunction() {
+              document.getElementById("message").innerHTML = ("...- --- ..- ... / ...- --- .. .-.. .- / . -. ..-. .. -. --..-- / .-.. .- / .-. . ...- --- .-.. ..- - .. --- -. / . ... - / .--. .-. --- -.-. .... . --..-- / ...- --- ..- ... / . - . ... / -.. . ... / -. --- - .-. . ... / ..--.. / -. --- - .-. . / -.-. .... . ..-. / .- / .-. . ..- ... ... .. / .- / .. -. - .-. --- -.. ..- .. .-. . / .-.. . / ... -.-- ... - . -- . / .. -. ..-. --- .-. -- .- - .. --.- ..- . / -.. . / -.-. . / ... .. - . --..-- / .. .-.. / .- / .-. . ..- ... ... .. / .- / -.-. .- -.-. .... . .-. / --.- ..- . .-.. --.- ..- . / .--. .- .-. - / ..- -. / -- --- -.-- . -. / -.. .----. .- -.-. -.-. . ... / .--. --- ..- .-. / - --- ..- ... / .-.. . ... / -- . -- -... .-. . ... .-.-.- / .. .-.. / -. --- ..- ... / .- / .--- ..- ... - . / -.. .. - / --.- ..- .----. .. .-.. / .- .. -- .- .. - / --. .-. .- -. -.. . -- . -. - / ..- -. / . -- .--. . .-. . ..- .-. / .-. --- -- .- .. -. --..-- / ... .- -. ... / -. --- ..- ... / . -. / -.. .. .-. . / .--. .-.. ..- ... --..-- / .. .-.. / .- / -.. .. - / --.- ..- .----. .. .-.. / .-. . -.-. --- -. -. .- .. - .-. .- .. - / .-.. .- / .-.. . ... / ...- .-. .- .. ... / .-. . ...- --- .-.. ..- - .. --- -. -. .- .. .-. . <br> svjhspzhalby bupmvytl kl ylzzvbyjl: pukle.wow?hjapvu=ylhkHss&jvuayvssly=avwpj Pukpjl: wyltply qvby hujpluul ylcvsal labkphual Hjapvu h mhpyl: tlaayl ivu tlzzhnl svyzxbl jylhapvu avwpj U'vbisplg whz kl jylly bu jvtwal wvby wvzaly");
+        }
+</script>
+    
 </body>
 
 </html>

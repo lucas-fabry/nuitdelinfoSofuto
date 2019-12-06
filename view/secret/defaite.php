@@ -1,0 +1,1 @@
+<p>Comment avez-vous pu ? Vous avez été trop long, nous n'avons pas pu lutter, tout est perdu...</p>
